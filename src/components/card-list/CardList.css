@@ -1,0 +1,8 @@
+.card-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card-list h1{
+    width: 100vw;
+}

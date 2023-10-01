@@ -1,0 +1,29 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(to right, rgb(0, 102, 255),rgba(119, 0, 134, 0.993));
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo p{
+    font-size: larger;
+}
+.category ul{
+    display: flex;
+    list-style: none;
+}
+.category ul li {
+    margin-inline: 30px;
+    font-size: larger;
+}
+.category ul li:hover{
+    color: aqua;
+    transition: ease-in 0.5s;
+    cursor: pointer;
+}
