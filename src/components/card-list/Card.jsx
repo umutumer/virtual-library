@@ -16,7 +16,7 @@ const Card = ({kitaplar,kitapSil}) => {
       <p>Kitap Adı: {kitap.kitapAdi} </p> <br />
       <p>Kitap Kategorisi: {kitap.kitapKategori} </p> <br />
       <p>Kitap Yazarı: {kitap.kitapYazari} </p> <br />
-      <p>Sayfa Sayısı: {kitap.sayfa} </p> <br />
+      <p>Sayfa Sayısı: {kitap.sayfaSayisi} </p> <br />
       <p>Kitap Açıklama: {kitap.kitapAciklama.substring(0,165)+"..."} </p> <br />
     </div>
   </div>
