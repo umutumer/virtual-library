@@ -5,7 +5,7 @@ nav{
     padding: 10px;
     height: 100px;
     width: 100%;
-    background: linear-gradient(to right, rgb(0, 102, 255),rgba(119, 0, 134, 0.993));
+    background-color: rgb(185, 0, 0);
 }
 .logo{
     display: flex;
@@ -23,7 +23,7 @@ nav{
     font-size: larger;
 }
 .category ul li:hover{
-    color: aqua;
+    color: rgb(255, 230, 0);
     transition: ease-in 0.5s;
     cursor: pointer;
 }

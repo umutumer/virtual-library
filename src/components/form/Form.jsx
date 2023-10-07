@@ -6,21 +6,26 @@ const Form = ({yeniKitap ,kitaplar}) => {
   const [kitapAdi,setKitapAdi] =useState("")
   const [kitapKategori,setKitapKategori] = useState("Kategori Seçiniz")
   const [kitapYazari,setKitapYazari] = useState("")
-  const [sayfa,setSayfa] = useState("")
+  const [sayfaSayisi,setSayfaSayisi] = useState("")
   const [kitapResim,setKitapResim] = useState("")
   const [kitapAciklama,setKitapAciklama] = useState("")
   const handleSubmit = (e) =>{
     e.preventDefault();
-    console.log("Form Onaylandı");
     yeniKitap({
       id: kitaplar.length +1,
       kitapAdi:kitapAdi,
       kitapKategori:kitapKategori,
       kitapYazari:kitapYazari,
-      sayfa:sayfa,
+      sayfaSayisi:sayfaSayisi,
       kitapResim:kitapResim,
       kitapAciklama:kitapAciklama
     })
+    setKitapAdi("");
+    setKitapKategori("");
+    setKitapResim("");
+    setKitapYazari("");
+    setSayfaSayisi("");
+    setKitapAciklama("");
   }
   return (
     <form onSubmit={handleSubmit}>
@@ -34,7 +39,7 @@ const Form = ({yeniKitap ,kitaplar}) => {
       </select>
       <input value={kitapAdi} type="text" onChange={e =>setKitapAdi(e.target.value)}  placeholder='Kitap adı' />
       <input value={kitapYazari} type="text" onChange={e =>setKitapYazari(e.target.value)} placeholder='Kitap Yazarı' />
-      <input value={sayfa} type="number" onChange={e =>setSayfa(e.target.value)} placeholder='Kitap Sayfa' />
+      <input value={sayfaSayisi} type="number" onChange={e =>setSayfaSayisi(e.target.value)} placeholder='Kitap Sayfa' />
       <input value={kitapResim} type="text" onChange={e =>setKitapResim(e.target.value)} placeholder='Kitap Resmi(Url)' />
       <textarea value={kitapAciklama} placeholder='Kitap Açıklaması'onChange={e =>setKitapAciklama(e.target.value)} ></textarea>
       <input type="submit" value={"Ekle"} disabled={
@@ -43,7 +48,7 @@ const Form = ({yeniKitap ,kitaplar}) => {
         !kitapKategori ==="Kategori Seçiniz" ||
         !kitapYazari.trim() ||
         !kitapResim.trim() ||
-        !sayfa
+        !sayfaSayisi
       } />
     </form>
   )

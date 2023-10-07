@@ -2,9 +2,10 @@
     position: relative;
     width: 450px;
     height: 300px;
-    background: linear-gradient(rgb(0, 102, 255),rgba(119, 0, 134, 0.993));
+    background: rgb(185, 0, 0);
     margin: 20px;
     border-radius: 10px;
+    border: 1px solid black;
 
 }
 .card img{
@@ -19,7 +20,7 @@
     width: 220px;
     float: left;
 }
-.card button{
+.delete-btn{
     position: absolute;
     top: 0;
     left: 0;
@@ -29,13 +30,32 @@
     background-color: red;
     color: white;
     cursor: pointer;
-    font-size: larger;
+    font-size: 50px;
     opacity: 0;
     border-radius: 10px 0 0 10px;
 
 }
-.card button:hover{
+.delete-btn:hover{
     width: 200px;
+    transition: ease-in .5s;
+    opacity: 1;
+}
+.edit-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 300px;
+    border: none;
+    background-color: rgb(0, 255, 55);
+    color: white;
+    cursor: pointer;
+    font-size: 50px;
+    opacity: 0;
+    border-radius: 0 10px 10px 0;
+}
+.edit-btn:hover{
+    width: 250px;
     transition: ease-in .5s;
     opacity: 1;
 }
