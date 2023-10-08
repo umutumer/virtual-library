@@ -3,7 +3,7 @@ import "./Card.css";
 import {AiFillEdit} from 'react-icons/ai'
 import {BsFillTrashFill} from 'react-icons/bs'
 
-const Card = ({ kitaplar, kitapSil }) => {
+const Card = ({cardDuzenle, kitaplar, kitapSil }) => {
   return kitaplar.map(
     (kitap) =>
       !kitap.isDeleted && (
@@ -21,7 +21,7 @@ const Card = ({ kitaplar, kitapSil }) => {
               Kitap Açıklama: {kitap.kitapAciklama.substring(0, 165) + "..."}{" "}
             </p>{" "}
             <br />
-            <button className="edit-btn">
+            <button className="edit-btn" onClick={() => cardDuzenle(kitap.id)}>
               <AiFillEdit />
             </button>
           </div>

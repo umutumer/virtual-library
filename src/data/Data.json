@@ -20,7 +20,7 @@
     },
     {
       "id": 3,
-      "kitapAdi": "Hayatımızdaki Algoritmalar",
+      "kitapAdi": " Hayatımızdaki Algoritmalar",
       "kitapKategori": "Yazılım",
       "kitapYazari": "Brian Christian, Tom Griffiths",
       "sayfaSayisi": 496,
@@ -98,16 +98,6 @@
       "sayfaSayisi": "622",
       "kitapResim": "https://i.dr.com.tr/cache/500x400-0/originals/0000000077265-1.jpg",
       "kitapAciklama": "Gücü elde etmek isteyenlere, gücün esiri olanlara ya da güce karşı direnenlere... Güç Sahibi Olmanın 48 Yasası Kimi gücünün zirvesindeyken ölümcül bir hatayla elindekini yitirir. Kimi çok ileri gider veya yeterince ilerleyemez. Fakat kimileri de doğru adımı atarak insanüstü bir gayretle gücü kendilerine çeker. Tarih boyunca yazarlar ve filozoflar kendilerine şu soruyu sormuşlardır; bizden öncekilerin başarılarından ya da hatalarından ne gibi dersler alabiliriz? Üç bin yıllık süre içinde güç hakkındaki çeşitli yazıları hep aynı konuları işlemiş, gücün özünü tanımlayarak nasıl arttırılacağını ve yönetileceğini veya nasıl yok edileceğini tarif etmiştir. Gücün 48 Yasası zihinlerden sonsuza dek silinmeyecektir."
-    },
-    {
-      "id": 12,
-      "kitapAdi": "asd",
-      "kitapKategori": "",
-      "kitapYazari": "asd",
-      "sayfaSayisi": "123",
-      "kitapResim": "asd",
-      "kitapAciklama": "13123",
-      "isDeleted": true
     }
   ],
   "kategoriler": [

@@ -9,12 +9,23 @@ function App() {
   const [kitaplar, setKitaplar] = useState([]);
   const [kategoriler,setKategoriler] = useState([]);
   const [secilenKategori,setSecilenKategori] = useState("");
-  const yeniKitap = async (yeni) => {
-    let url ="http://localhost:3005/kitaplar";
+  const [secilenKitap,setSecilenKitap] = useState(null);
+
+
+  const kitapEkleDuzenle = async (yeni) => {
+    let url ="http://localhost:3005/kitaplar/";
+    if (!secilenKitap) {
     const response = await axios.post(url,yeni)
    if (response.status === 201) {
     setKitaplar(prev => [...prev,yeni])
    }
+    }else{
+      url += `${secilenKitap.id}`;
+      const response2 = await axios.put(url,yeni)
+      console.log(response2);
+      setSecilenKitap(null)
+    }
+    
   };
 
   const kitapSil = async (id)=>{
@@ -41,19 +52,26 @@ function App() {
     setKategoriler(kategoriler)
   }
 
+  const cardDuzenle = async (id) =>{
+    let url = `http://localhost:3005/kitaplar/${id}`;
+    const response = await axios.get(url)
+    const duzenlenecekKitap = response.data
+    setSecilenKitap(duzenlenecekKitap)
+  }
+
   useEffect(() =>{
   kitaplariGetir()
   kategorileriGetir()
   //eslint-disable-next-line
-  },[secilenKategori])
+  },[secilenKategori,secilenKitap])
 
   
 
   return (
     <div className="App">
       <Navbar secilenKategori={secilenKategori} setSecilenKategori={setSecilenKategori} kategoriler={kategoriler} />
-      <Form kitaplar={kitaplar} yeniKitap={yeniKitap} />
-      <CardList kitapSil={kitapSil} kitaplar={kitaplar} />
+      <Form secilenKitap={secilenKitap} kitaplar={kitaplar} kitapEkleDuzenle={kitapEkleDuzenle} />
+      <CardList cardDuzenle={cardDuzenle} kitapSil={kitapSil} kitaplar={kitaplar} />
     </div>
   );
 }
