@@ -27,3 +27,13 @@ nav{
     transition: ease-in 0.5s;
     cursor: pointer;
 }
+.category input{
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+.category input:focus{
+    outline: 2px solid red;
+    color: red;
+}

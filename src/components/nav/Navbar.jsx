@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./Navbar.css"
 import Logo from "../../image/logo.png.png"
+import DataContext from '../../Context/DataContext'
 
-const Navbar = ({kategoriler,setSecilenKategori,secilenKategori}) => {
+const Navbar = () => {
+  const {kategoriler,setSecilenKategori,secilenKategori,setSearch} =useContext(DataContext)
   return (
     <nav>
        <div className="logo">
@@ -20,6 +22,7 @@ const Navbar = ({kategoriler,setSecilenKategori,secilenKategori}) => {
          
           
         </ul>
+        <input type="search" placeholder='Ara...' onChange={(e)=> setSearch(e.target.value)} />
        </div>
     </nav>
   )

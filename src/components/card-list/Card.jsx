@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Card.css";
 import {AiFillEdit} from 'react-icons/ai'
 import {BsFillTrashFill} from 'react-icons/bs'
+import DataContext from "../../Context/DataContext";
 
-const Card = ({cardDuzenle, kitaplar, kitapSil }) => {
-  return kitaplar.map(
-    (kitap) =>
+const Card = ({kitap}) => {
+  const {cardDuzenle, kitapSil } =useContext(DataContext)
+  return (
+    
       !kitap.isDeleted && (
         <div key={kitap.id} className="card">
           <button className="delete-btn" onClick={() => kitapSil(kitap.id)}>
