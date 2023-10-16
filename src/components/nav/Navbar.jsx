@@ -4,7 +4,8 @@ import Logo from "../../image/logo.png.png"
 import DataContext from '../../Context/DataContext'
 
 const Navbar = () => {
-  const {kategoriler,setSecilenKategori,secilenKategori,setSearch} =useContext(DataContext)
+  const {state,dispatch,handleClickKategori} =useContext(DataContext)
+
   return (
     <nav>
        <div className="logo">
@@ -14,15 +15,15 @@ const Navbar = () => {
        <div className="category">
         <ul>
           {
-            kategoriler.map(kategori => 
-              ((secilenKategori && secilenKategori !== "Tüm Kitaplar" )|| kategori.kategoriAdı !== "Tüm Kitaplar" ) &&
-              <li key={kategori.id} onClick={() => setSecilenKategori(kategori.kategoriAdı)} >{kategori.kategoriAdı}</li>
+            state.kategoriler.map(kategori => 
+              ((state.secilenKategori && state.secilenKategori !== "Tüm Kitaplar" )|| kategori.kategoriAdı !== "Tüm Kitaplar" ) &&
+              <li key={kategori.id} onClick={() => handleClickKategori(kategori.kategoriAdı)} >{kategori.kategoriAdı}</li>
               )
           }
          
           
         </ul>
-        <input type="search" placeholder='Ara...' onChange={(e)=> setSearch(e.target.value)} />
+        <input type="search" placeholder='Ara...' onChange={(e)=> dispatch({type:"search",payload:e.target.value})} />
        </div>
     </nav>
   )

@@ -5,13 +5,12 @@ import DataContext from '../../Context/DataContext'
 
 
 const CardList = () => {
-  const{kitaplar,search} = useContext(DataContext)
-
+  const{state} = useContext(DataContext)
   return (
     <div className='card-list'>
       <h1>Card List</h1>
-      {kitaplar.map((kitap)=>
-      kitap.kitapAdi.toLowerCase().startsWith(search)&&
+      {state.kitaplar.map((kitap)=>
+      kitap.kitapAdi.toLowerCase().startsWith(state.search)&&
         <Card kitap={kitap} />
       )}
       

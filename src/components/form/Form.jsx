@@ -4,13 +4,13 @@ import DataContext from "../../Context/DataContext";
 
 const Form = () => {
 
-const { secilenKitap,setKitapKategori,kitapKategori,kitapAdi,kitapYazari,sayfaSayisi,setSayfaSayisi,setKitapAdi,setKitapYazari,kitapResim,setKitapResim,kitapAciklama,setKitapAciklama,handleSubmit } = useContext(DataContext)
+const { state,dispatch,handleSubmit } = useContext(DataContext)
   return (
     <form onSubmit={handleSubmit}>
-      <h3>{secilenKitap? "kitabı düzenle":"kitap ekle"}</h3>
+      <h3>{state.secilenKitap? "kitabı düzenle":"kitap ekle"}</h3>
       <select
-        value={kitapKategori}
-        onChange={(e) => setKitapKategori(e.target.value)}
+        value={state.kitapKategori}
+        onChange={(e) => dispatch({type:"kitapKategori",payload:e.target.value})}
       >
         <option value="">Kategori Seçiniz</option>
         <option value="">Yazılım</option>
@@ -19,43 +19,43 @@ const { secilenKitap,setKitapKategori,kitapKategori,kitapAdi,kitapYazari,sayfaSa
         <option value="">Diğer</option>
       </select>
       <input
-        value={kitapAdi}
+        value={state.kitapAdi}
         type="text"
-        onChange={(e) => setKitapAdi(e.target.value)}
+        onChange={(e) => dispatch({type:"kitapAdi",payload:e.target.value})}
         placeholder="Kitap adı"
       />
       <input
-        value={kitapYazari}
+        value={state.kitapYazari}
         type="text"
-        onChange={(e) => setKitapYazari(e.target.value)}
+        onChange={(e) => dispatch({type:"kitapYazari",payload:e.target.value})}
         placeholder="Kitap Yazarı"
       />
       <input
-        value={sayfaSayisi}
+        value={state.sayfaSayisi}
         type="number"
-        onChange={(e) => setSayfaSayisi(e.target.value)}
+        onChange={(e) => dispatch({type:"sayfaSayisi",payload:e.target.value})}
         placeholder="Kitap Sayfa"
       />
       <input
-        value={kitapResim}
+        value={state.kitapResim}
         type="text"
-        onChange={(e) => setKitapResim(e.target.value)}
+        onChange={(e) => dispatch({type:"kitapResim",payload:e.target.value})}
         placeholder="Kitap Resmi(Url)"
       />
       <textarea
-        value={kitapAciklama}
+        value={state.kitapAciklama}
         placeholder="Kitap Açıklaması"
-        onChange={(e) => setKitapAciklama(e.target.value)}
+        onChange={(e) => dispatch({type:"kitapAciklama",payload:e.target.value})}
       ></textarea>
       <input
         disabled={
-          !kitapAciklama.trim() ||
-          !kitapAdi.trim() ||
-          !kitapKategori === "Kategori Seçiniz" ||
-          !kitapYazari.trim() ||
-          !kitapResim.trim() ||
-          !sayfaSayisi 
-        } type="submit" value={secilenKitap? "düzenle":"ekle"}
+          !state.kitapAciklama.trim() ||
+          !state.kitapAdi.trim() ||
+          !state.kitapKategori === "Kategori Seçiniz" ||
+          !state.kitapYazari.trim() ||
+          !state.kitapResim.trim() ||
+          !state.sayfaSayisi 
+        } type="submit" value={state.secilenKitap? "düzenle":"ekle"}
       />
     </form>
   );
